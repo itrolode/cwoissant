@@ -1,0 +1,117 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        french vocabulerie
+    </title>
+
+    <!-- add css here -->
+    <style>
+        #error {
+            display: none;
+            text-align: center;
+        }
+        #theform {
+            display:none;
+            text-align: center;
+        }
+        #comments {
+            display:none;
+            text-align: center;
+        }
+        #accents {
+            display:none;
+            text-align: center;
+        }
+        #sc {
+            display: none;
+            text-align: center;
+        }
+        #showingconj {
+            text-align: center;
+        }
+        #counter {
+            background-color: greenyellow;
+            display: none;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <div id = "buttons">
+    <button id = "animals">animals</button>
+    <button id = "family">family</button>
+    <button id = "rooms">rooms</button>
+    <button id = "time">time</button>
+    <button id = "adjectives">adjectives</button>
+    </div>
+
+    <button id = "conj">conjugating verbs</button>
+
+    <div id = "accents">
+        <button id = "acute">é</button>
+        <button id = "grave_e">è</button>
+        <button id = "grave_a">à</button>
+        <button id = "cedilla">ç</button>
+        <button id = "circumflex_e">ê</button>
+        <button id = "circumflex_a">â</button>
+    </div> <br>
+
+
+    <span id = "error"> page not set up yet </span>
+
+
+    <form id = "theform">
+
+        <label for = "ans2" id = "question2"></label><br>
+        <input id = "ans2" name = "ans2"> <br><br>
+
+        <label for = "ans1" id = "question1"></label><br>
+        <input id = "ans1" name = "frenh"><br><br>
+
+
+        <button type="submit">submit</button>
+
+    </form>
+
+
+    <span id = "counter"></span><br>
+
+    <span id = "comments"></span> <br>
+    <div id = "sc"><button id = "showconj"></button><br></div>
+    <span id="showingconj"></span>
+
+
+    <script>
+        //domestic animals - 0 - 9
+        //farm animals - 10 - 18
+        let animals = ["le chien","le chat","le lapin","la tortue", 
+        "le hamster","le poisson rouge","la souris","le canari","le cochon d'Inde","le perroquet",
+        "la vache", "le mouton", "le cheval", "la poule","le coq", "le canard",
+        "le cochon","l'âne","la chèvre","le renard","le écureuil","le loup", "l'oiseau",
+        "un hibou","le cerf","le hérisson","la dinde","le lama","le dauphin",
+        "le requin", "le poulpe", "la tortue de mer", "la méduse", "le homard",
+        "le crabe","la baleine", "le thon", "la crevette", "l'aigle", "le manchot",
+        "le cygne", "le flamant", "le paon", "le pigeon", "la corneille", "la grenouille",
+        "le gecko", "le dragon de Komodo", "L'iguane", "le crocodile", "le python", "l'anaconda",
+        "le serpent"]
+
+        let time = ["de temps en temps", "tous les jours", "chaque jour", "lundi","mardi", "mercredi", "jeudi",
+        "vendredi","samedi","dimanche","la semaine", "l'année", "prochaine", "janvier", "février", "mars", "avril",
+        "mai","juin","juillet","août","septembre","octobre","novembre","decembre", "le mois"]
+
+        let time_eng = ["sometimes", "everyday", "each day", "monday", "tuesday", "wednesday", "thursday", "friday",
+        "saturday","sunday","the week","the year", "next", "january", "february","march","april", "may","june","july",
+        "august", "september", "october", "november", "december", "the month"]
+    
+    </script>
+    <script src="essentials.js"></script>
+    <script src="conjugations.js"></script>
+</body>
+
+
+</html>
