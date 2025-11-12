@@ -9,6 +9,7 @@
     let random_num;
     let random_verb;
     let counter = 0;
+    let streak = 0;
 
     
     //shows the all conjugations for the verb on click
@@ -39,8 +40,10 @@
         element("conj").style.display = 'none';
         element("theform").style.display = 'block';
         element("accents").style.display = 'block';
+        element("streak").style.display = 'block';
         element("counter").style.display = 'block';
         element("counter").textContent = counter;
+        element("streak").textContent = counter;
         verb_subject_randomizer();
         conjugator(random_num);
 
@@ -76,6 +79,8 @@
                 element("comments").textContent = "Good job!! You got it right!";
                 counter = counter + 1;
                 element("counter").textContent = counter;
+                streak = streak + 1
+                element("streak").textContent = streak;
 
             }
 
@@ -86,6 +91,8 @@
                 element("comments").innerHTML = comment;
                 counter = counter - 1;
                 element("counter").textContent = counter;
+                streak = 0;
+                element("streak").textContent = streak;
 
             }
 
@@ -122,6 +129,12 @@
     //domestic animals - 0 - 9
     //farm animals - 10 - 18
     
+    let t_t = ["add \"est-ce que\" before a statement to make it a question",
+        "connaître (verb) - used for being familiar with a person or thing <br> while savoir is for knowing of a skill or information",
+        "l'œuf (an egg) is pronounced l' + euf, while les œuf is pronounced lays eu, as there is no f sound in the plural form",
+        "visiter - to visit, rentrer - to back HOME, retourner - to go revisit a place",
+        ""
+    ]
 
     //when adding a new irregular verbs, add it in verbs_irregular array, it's own array of verb name,
     //verbs_english, and in the verbs array. 
@@ -143,11 +156,11 @@
     ["attendre","confondre","fondre","mordre","vendre","répondre","perdre"],
     ["aller","avoir","être","boire","dormir","faire"]]
 
-    let verbs_english = [[["eat"],["share","divide","distribute"],["swim"],["start","begin"],["like","love"],
+    let verbs_english = [[["eat"],["share","divide","distribute"],["swim"],["start","begin","commence"],["like","love"],
     ["search","look for","seek"],["speak","talk"],["play"],["dance"],["listen","hear"],["ask","request"],["give","provide"],["celebrate"],
     ["live","reside"],["walk","march"],["think"],["look","watch"],["work"],["find","discover"],["travel"],["visit"],["scream","shout"]],
     [["build"],["choose","select"],["finish","complete"],["recover","heal"],["fill","fill up"],["blush","turn red"],["age","grow old"]],
-    [["wait"],["confuse","mix up"],["melt"],["bite"],["sell"],["answer","respond"],["lose"]],
+    [["wait"],["confuse","mix up","confound"],["melt"],["bite"],["sell"],["answer","respond"],["lose"]],
     [["go"],["have","own"],["be"],["drink"],["sleep"],["make","do"]]];
 
 
@@ -178,8 +191,6 @@
         let er = verbs[0].length/total;
         let ir = verbs[1].length/total;
         let re = verbs[2].length/total;
-        let chance_irregular = verbs[3].length/total;
-
 
         //decides which of the weighted range the die cast has fallen into
         if (verb_type_random < er) {
@@ -265,3 +276,4 @@
         return full_word;
 
     }
+
