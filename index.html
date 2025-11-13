@@ -21,11 +21,14 @@
         }
         #accents {
             display:none;
-            text-align: center;
+            gap: 20px;
+            margin: auto;
+            width: 140px;
         }
-        #showconj{
-            margin: 10px auto;
+        #showconjbutton{
             display: none;
+            text-align: center;
+            margin: auto;
         }
         #showingconj {
             text-align: center;
@@ -34,12 +37,27 @@
         #counter {
             background-color: greenyellow;
             display: none;
+            color: black;
             text-align: center;
         }
         #streak {
             background-color: rgb(47, 186, 255);
             display: none;
+            color: black;
             text-align: center;
+        }
+        #advice {
+            display:none;
+            text-align: center;
+            font-family: "Comic Sans MS", sans-serif;
+            font-style: italic;
+            font-weight: lighter;
+        }
+        #toplinebuttons {
+            display:inline-block;
+        }
+        #darkmode {
+            float:right;
         }
 
     </style>
@@ -48,6 +66,7 @@
 
 <body>
 
+    <div id = "toplinebuttons"></div>
     <div id = "buttons">
     <button id = "animals">animals</button>
     <button id = "family">family</button>
@@ -56,7 +75,10 @@
     <button id = "adjectives">adjectives</button>
     </div>
 
+    <button id = "darkmode">darkmode</button>
+
     <button id = "conj">conjugating verbs</button>
+
 
     <div id = "accents">
         <button id = "acute">é</button>
@@ -66,6 +88,7 @@
         <button id = "circumflex_e">ê</button>
         <button id = "circumflex_a">â</button>
     </div> <br>
+    </div>
 
 
     <span id = "error"> page not set up yet </span>
@@ -89,8 +112,14 @@
     <span id = "streak"></span><br>
 
     <span id = "comments"></span> <br>
-    <button id = "showconj"></button><br>
-    <span id="showingconj"></span>
+    <button id = "showconjbutton"></button><br>
+    <span id="showingallconj"></span><br><br>
+
+    <span id ="advice"></span>
+
+
+
+
 
 
     <script>
