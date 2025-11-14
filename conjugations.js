@@ -34,14 +34,25 @@ element("darkmode").addEventListener('click',function() {
 }
 )
 
+let allconjshown = false;
 //shows the all conjugations for the verb on click
 element("showconjbutton").addEventListener('click',function(){
+
+    if (!allconjshown) {
         let text = conjugator(0) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + conjugator(4) + "<br>" +
         conjugator(1) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + conjugator(5) + "<br>" +
         conjugator(2) + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + conjugator(6) + "<br>" +
         conjugator(3) + "&nbsp;&nbsp;&nbsp;" + conjugator(7);
         element("showingallconj").innerHTML = text;
         element("showingallconj").style.display = 'block'; 
+        element("showconjbutton").textContent = "hide conjugations for " + verb_chosen;
+        allconjshown = true;
+    }
+
+    else {
+        element("showingallconj").style.display = 'none';
+        allconjshown = false;
+    }
 
     })
 
@@ -165,7 +176,8 @@ let boire = ["bois","bois","boit","boit","buvons","buvez","bouvent","bouvent"]
 let dormir = ["dors","dors","dort","dort","dormons","dormez","dorment","dorment"]
 let faire = ["fais","fais","fait","fait","faisons","faites","font","font"]
 let acheter = ["achète", "achètes", "achète", "achète","achetons", "achetez", "achètent","achètent"];
-let verbs_irregular = [aller,avoir,être,boire,dormir,faire,acheter,"lire","écrire"];
+let savoir = ["sais","sais","sait","sait","savons","savez","savent","savent"]
+let verbs_irregular = [aller,avoir,être,boire,dormir,faire,acheter,savoir,"lire","écrire"];
 
 
 
@@ -175,7 +187,7 @@ let verbs = [["manger","partager","nager","commencer","aimer","chercher","parler
 "fêter", "habiter", "marcher", "penser", "regarder", "travailler", "trouver","voyager", "visiter","hurler","laisser","tomber"],
 ["bâtir", "choisir", "finir", "guérir","remplir","rougir","vieillir"],
 ["attendre","confondre","fondre","mordre","vendre","répondre","perdre"],
-["aller","avoir","être","boire","dormir","faire","acheter"]]
+["aller","avoir","être","boire","dormir","faire","acheter","savoir"]]
 
 let verbs_english = [[["eat"],["share","divide","distribute"],["swim"],["start","begin","commence"],["like","love"],
 ["search","look for","seek"],["speak","talk"],["play"],["dance"],["listen","hear"],["ask","request"],["give","provide"],["celebrate"],
@@ -183,7 +195,7 @@ let verbs_english = [[["eat"],["share","divide","distribute"],["swim"],["start",
 ["let","allow to happen","leave"],["fall"]],
 [["build"],["choose","select"],["finish","complete"],["recover","heal"],["fill","fill up"],["blush","turn red"],["age","grow old"]],
 [["wait"],["confuse","mix up","confound"],["melt"],["bite"],["sell"],["answer","respond"],["lose"]],
-[["go"],["have","own"],["be"],["drink"],["sleep"],["make","do"],["buy","purchase"]]];
+[["go"],["have","own"],["be"],["drink"],["sleep"],["make","do"],["buy","purchase"],["know","be aware"]]];
 
 
 
