@@ -7,6 +7,9 @@
 
     <!-- add css here -->
     <style>
+        body {
+            background-color : rgb(50, 45, 45);
+        }
         #error {
             display: none;
             text-align: center;
@@ -35,13 +38,13 @@
             display: none;
         }
         #counter {
-            background-color: greenyellow;
+            background-color: rgb(47, 186, 255);
             display: none;
             color: black;
             text-align: center;
         }
         #streak {
-            background-color: rgb(47, 186, 255);
+            background: linear-gradient(45deg, #ff00cc, #3333ff);
             display: none;
             color: black;
             text-align: center;
@@ -75,7 +78,7 @@
     <button id = "adjectives">adjectives</button>
     </div>
 
-    <button id = "darkmode">darkmode</button>
+    <button id = "darkmode">lightmodeww</button>
 
     <button id = "conj">conjugating verbs</button>
 
@@ -97,10 +100,10 @@
     <form id = "theform">
 
         <label for = "ans2" id = "question2"></label><br>
-        <input id = "ans2" name = "ans2"> <br><br>
+        <input id = "ans2" name = "ans2" autocomplete="off"> <br><br>
 
         <label for = "ans1" id = "question1"></label><br>
-        <input id = "ans1" name = "frenh"><br><br>
+        <input id = "ans1" name = "frenh" autocomplete="off"><br><br>
 
 
         <button type="submit">submit</button>
@@ -123,6 +126,18 @@
 
 
     <script>
+
+        //sentence starters and connectives
+        //translate eng to french
+        //make it take in alternate meanings for one word
+        //tells you an alternate meaning (a random one) (or the more accurate one)
+        let ss = ["aussi","mais","enfin","finalement","puis","et","ou","généralement","en général","d'habitude","normalement",
+        "malheureusement","heureusement","pour","qui","pendant","très","trop","assez","seulement","toujours","alors","donc","si",
+        "parfois","d'abord","ensuite","de plus","surtout","dois","selon","pourtant","après","en tant que", "à mon avis",
+        "selon moi", "je pense que", "pour moi","il me semble que","en ce qui me concerne", "je croix fortement que", "je trouve que",
+        "d'après moi","cependant","car","parce que","cependant","ni"];
+
+        let adjectifs = [];
         //domestic animals - 0 - 9
         //farm animals - 10 - 18
         let animals = ["le chien","le chat","le lapin","la tortue", 

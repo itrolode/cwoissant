@@ -10,7 +10,7 @@ let random_num;
 let random_verb;
 let counter = 0;
 let streak = 0;
-let darkmode = false;
+let darkmode = true;
 
 //dark mode
 element("darkmode").addEventListener('click',function() {
@@ -51,6 +51,7 @@ element("showconjbutton").addEventListener('click',function(){
 
     else {
         element("showingallconj").style.display = 'none';
+        element("showconjbutton").textContent = "show conjugations for " + verb_chosen;
         allconjshown = false;
     }
 
@@ -172,30 +173,32 @@ element("theform").addEventListener('submit', function(event) {
 let aller = ["vais","vas","va","va","allons","allez","vont","vont"]
 let avoir = ["ai","as","a","a","avons","avez","ont","ont"]
 let être = ["suis","es","est","est","sommes","êtes","sont","sont"]
-let boire = ["bois","bois","boit","boit","buvons","buvez","bouvent","bouvent"]
+let boire = ["bois","bois","boit","boit","buvons","buvez","boivent","boivent"]
 let dormir = ["dors","dors","dort","dort","dormons","dormez","dorment","dorment"]
 let faire = ["fais","fais","fait","fait","faisons","faites","font","font"]
 let acheter = ["achète", "achètes", "achète", "achète","achetons", "achetez", "achètent","achètent"];
 let savoir = ["sais","sais","sait","sait","savons","savez","savent","savent"]
-let verbs_irregular = [aller,avoir,être,boire,dormir,faire,acheter,savoir,"lire","écrire"];
+let lire = ["lis","lis","lit","lit","lisons","lisez","lisent","lisent"]
+let écrire = ["écris","écris","écrit","écrit","écrivons","écrivez","écrivent","écrivent"]
+let verbs_irregular = [aller,avoir,être,boire,dormir,faire,acheter,savoir,lire,écrire];
 
 
 
 //when adding a new verb, add it in the correct place in verbs
 //and adds its meaning in verbs_english
 let verbs = [["manger","partager","nager","commencer","aimer","chercher","parler","jouer","danser","écouter", "demander", "donner",
-"fêter", "habiter", "marcher", "penser", "regarder", "travailler", "trouver","voyager", "visiter","hurler","laisser","tomber"],
+"fêter", "habiter", "marcher", "penser", "regarder", "travailler", "trouver","voyager", "visiter","hurler","laisser","tomber","apporter"],
 ["bâtir", "choisir", "finir", "guérir","remplir","rougir","vieillir"],
 ["attendre","confondre","fondre","mordre","vendre","répondre","perdre"],
-["aller","avoir","être","boire","dormir","faire","acheter","savoir"]]
+["aller","avoir","être","boire","dormir","faire","acheter","savoir","lire","écrire"]]
 
 let verbs_english = [[["eat"],["share","divide","distribute"],["swim"],["start","begin","commence"],["like","love"],
 ["search","look for","seek"],["speak","talk"],["play"],["dance"],["listen","hear"],["ask","request"],["give","provide"],["celebrate"],
 ["live","reside"],["walk","march"],["think"],["look","watch"],["work"],["find","discover"],["travel"],["visit"],["scream","shout"],
-["let","allow to happen","leave"],["fall"]],
+["let","allow to happen","leave"],["fall"],["bring"]],
 [["build"],["choose","select"],["finish","complete"],["recover","heal"],["fill","fill up"],["blush","turn red"],["age","grow old"]],
 [["wait"],["confuse","mix up","confound"],["melt"],["bite"],["sell"],["answer","respond"],["lose"]],
-[["go"],["have","own"],["be"],["drink"],["sleep"],["make","do"],["buy","purchase"],["know","be aware"]]];
+[["go"],["have","own"],["be"],["drink"],["sleep"],["make","do"],["buy","purchase"],["know","be aware"],["read"],["write"]]];
 
 
 
@@ -327,7 +330,6 @@ let t_t = ["add \"est-ce que\" before a statement to make it a question",
     "french idiom: <br> L'habit ne fait pas la moine (the clothes doesn't make the monk.)",
     "french idiom: <br> vous parlez comme une vache d'Espagnol (you speak like a french cow)",
     "french phrase: <br> tu es à l’ouest (you are in the west - you are spacing out)",
-    "french phrase: <br> ils ont la femme (there be lazy)",
     "french phrase: <br> Être au taquet (to be fire (motivated))",
     "to play an instrument : jouer <b>de</b> + instrument <br> to play a sport: jouer <b>à</b> sport",
     "//confirm w teach to be online - je suis en ligne",
